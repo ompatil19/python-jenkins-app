@@ -7,6 +7,13 @@ pipeline {
                 echo 'Creating virtual environment and installing dependencies...'
             }
         }
+        stage('Print Workspace') {
+            steps {
+                script {
+                    echo "The workspace path is: ${env.WORKSPACE}"
+                }
+            }
+        }
         stage('Test') {
             steps {
                 echo 'Running tests...'
